@@ -96,14 +96,14 @@
             display-name = "SYMBOL";
 
             // ---------------------------------------------------------------------------------------------
-            // |  ~  |  !  |  @  |  #  |  $  |  %  |         ↑         |  ^  |  &  |  *  |  (  |  )  | DEL |
-            // |  `  |     |     |     |     |     |    ←  click  →    |     |  -  |  =  |  [  |  ]  |  \  |
+            // |  `  |  !  |  @  |  #  |  $  |  %  |         ↑         |  ^  |  &  |  *  |  (  |  )  | DEL |
+            // |  ~  |     |     |     |     |     |    ←  click  →    |     |  -  |  =  |  [  |  ]  |  \  |
             // |     |     |     |     |     |     |         ↓         |     |  _  |  +  |  {  |  }  |  |  |
             //                   |     |     |     |                   |     |     |     |
 
             bindings = <
-&kp TILDE  &kp EXCL      &kp AT        &kp HASH   &kp DLLR   &kp PRCNT  &mmv MOVE_UP     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp DEL
-&kp GRAVE  &none         &mkp LCLK     &mkp MCLK  &mkp RCLK  &mkp MB4   &mmv MOVE_DOWN   &none      &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
+&kp GRAVE  &kp EXCL      &kp AT        &kp HASH   &kp DLLR   &kp PRCNT  &mmv MOVE_UP     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp DEL
+&kp TILDE  &none         &mkp LCLK     &mkp MCLK  &mkp RCLK  &mkp MB4   &mmv MOVE_DOWN   &none      &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
 &none      &out OUT_USB  &out OUT_BLE  &none      &none      &mkp MB5   &mmv MOVE_LEFT   &none      &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE
                          &trans        &trans     &trans     &trans     &mmv MOVE_RIGHT  &trans     &trans     &trans
                                                                         &mkp LCLK
