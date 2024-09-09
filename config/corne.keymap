@@ -35,20 +35,6 @@
         };
     };
 
-    rgb_encoder: rgb_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
-    };
-
-    scroll_encoder: scroll_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-        tap-ms = <30>;
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -65,8 +51,8 @@
 &kp TAB     &kp Q  &kp W      &kp E     &kp R      &kp T           &kp UP_ARROW     &kp Y           &kp U      &kp I      &kp O    &kp P     &kp BSPC
 &kp LSHIFT  &kp A  &kp S      &kp D     &kp F      &kp G           &kp DOWN_ARROW   &kp H           &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LCTRL   &kp Z  &kp X      &kp C     &kp V      &kp B           &kp LEFT_ARROW   &kp N           &kp M      &kp COMMA  &kp DOT  &kp FSLH  &mt CAPS LG(SPACE)
-                       &kp SPACE  &kp LGUI  &mo LOWER  &lt FUNC SPACE  &kp RIGHT_ARROW  &lt FUNC ENTER  &mo RAISE  &kp RALT
-                                                                       &kp ENTER
+                   &kp SPACE  &kp LGUI  &mo LOWER  &lt FUNC SPACE  &kp RIGHT_ARROW  &lt FUNC ENTER  &mo RAISE  &kp RALT
+                                                                   &kp ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
@@ -89,7 +75,7 @@
                                                                                                 &mkp LCLK
             >;
 
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         raise_layer {
@@ -105,11 +91,11 @@
 &kp GRAVE  &kp EXCL      &kp AT        &kp HASH   &kp DLLR   &kp PRCNT  &mmv MOVE_UP     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp DEL
 &kp TILDE  &none         &mkp LCLK     &mkp MCLK  &mkp RCLK  &mkp MB4   &mmv MOVE_DOWN   &none      &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
 &none      &out OUT_USB  &out OUT_BLE  &none      &none      &mkp MB5   &mmv MOVE_LEFT   &none      &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE
-                         &trans        &trans     &trans     &trans     &mmv MOVE_RIGHT  &trans     &trans     &trans
+                         &kp C_MUTE    &trans     &trans     &trans     &mmv MOVE_RIGHT  &trans     &trans     &trans
                                                                         &mkp LCLK
             >;
 
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         func_layer {
@@ -129,7 +115,7 @@
                                                                    &bt BT_CLR_ALL
             >;
 
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
     };
 };
