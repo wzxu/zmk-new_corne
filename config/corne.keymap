@@ -43,9 +43,9 @@
 
             // ---------------------------------------------------------------------------------------------------------
             // | TAB   |  Q  |  W  |  E  |  R  |  T  |         ↑         |  Y  |  U  |  I  |  O  |  P  | BKSP          |
-            // | SHIFT |  A  |  S  |  D  |  F  |  G  |    ←  enter  →    |  H  |  J  |  K  |  L  |  ;  |  '            |
+            // | SHIFT |  A  |  S  |  D  |  F  |  G  |    ←   ENT   →    |  H  |  J  |  K  |  L  |  ;  |  '            |
             // | CTRL  |  Z  |  X  |  C  |  V  |  B  |         ↓         |  N  |  M  |  ,  |  .  |  /  | HYPER/RAYCAST |
-            //                     | CMD | LWR | SPC |                   | ENT | RSE | ALT |
+            //                     | CMD | LWR | SPC |       SPACE       | ENT | RSE | ALT |
 
             bindings = <
 &kp TAB     &kp Q  &kp W      &kp E     &kp R      &kp T           &kp UP_ARROW     &kp Y           &kp U      &kp I      &kp O    &kp P     &kp BSPC
@@ -62,17 +62,17 @@
             display-name = "NUMBER";
 
             // -----------------------------------------------------------------------------------------------------------------
-            // | ESC |    1    |    2    |    3    |    4    |    5    |         ↑         |  6  |  7  |  8  |  9  |  0  |  =  |
-            // |     | RGB_BRI | RGB_BRD |         | RGB_SPI | RGB_SPD |    ←  click  →    |     |  4  |  5  |  6  |  +  |  *  |
-            // |     | RGB_ON  | RGB_OFF | EP_OFF  | RGB_EFF | RGB_EFR |         ↓         |     |  1  |  2  |  3  |  -  |  /  |
-            //                           |         |         |         |                   |     |     |  0  |
+            // | ESC |  1  |  2   |  3   |  4   |  5  |         ↑         |  6  |  7  |  8  |  9  |  0  |  =  |
+            // |     |     | LCLK | MCLK | RCLK | MB4 |    ←  L_CLK  →    |     |  4  |  5  |  6  |  +  |  *  |
+            // |     |     |      |      |      | MB5 |         ↓         |     |  1  |  2  |  3  |  -  |  /  |
+            //                    |      |      |     |        MUTE       |     |     |  0  |
 
             bindings = <
-&kp ESC  &kp N1           &kp N2           &kp N3             &kp N4           &kp N5           &mmv MOVE_UP     &kp N6  &kp N7  &kp N8  &kp N9  &kp N0     &kp EQUAL
-&trans   &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &none              &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &mmv MOVE_DOWN   &none   &kp N4  &kp N5  &kp N6  &kp PLUS   &kp ASTRK
-&trans   &rgb_ug RGB_ON   &rgb_ug RGB_OFF  &ext_power EP_OFF  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &mmv MOVE_LEFT   &none   &kp N1  &kp N2  &kp N3  &kp MINUS  &kp FSLH
-                          &kp C_MUTE       &trans             &trans           &trans           &mmv MOVE_RIGHT  &trans  &trans  &kp N0
-                                                                                                &mkp LCLK
+&kp ESC  &kp N1  &kp N2      &kp N3     &kp N4     &kp N5    &mmv MOVE_UP     &kp N6  &kp N7  &kp N8  &kp N9  &kp N0     &kp EQUAL
+&trans   &none   &mkp LCLK   &mkp MCLK  &mkp RCLK  &mkp MB4  &mmv MOVE_DOWN   &none   &kp N4  &kp N5  &kp N6  &kp PLUS   &kp ASTRK
+&trans   &none   &none       &none      &none      &mkp MB5  &mmv MOVE_LEFT   &none   &kp N1  &kp N2  &kp N3  &kp MINUS  &kp FSLH
+                 &kp C_MUTE  &trans     &trans     &trans    &mmv MOVE_RIGHT  &trans  &trans  &kp N0
+                                                             &mkp LCLK
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -81,18 +81,18 @@
         raise_layer {
             display-name = "SYMBOL";
 
-            // ---------------------------------------------------------------------------------------------
-            // |  `  |  !  |  @  |  #  |  $  |  %  |         ↑         |  ^  |  &  |  *  |  (  |  )  | DEL |
-            // |  ~  |     |     |     |     |     |    ←  click  →    |     |  -  |  =  |  [  |  ]  |  \  |
-            // |     |     |     |     |     |     |         ↓         |     |  _  |  +  |  {  |  }  |  |  |
-            //                   |     |     |     |                   |     |     |     |
+            // -----------------------------------------------------------------------------------------------
+            // |  `  |  !  |  @  |  #  |  $  |  %  |        VOL_UP       |  ^  |  &  |  *  |  (  |  )  | DEL |
+            // |  ~  |     |     |     |     |     |  PREV   PLAY  NEXT  |     |  -  |  =  |  [  |  ]  |  \  |
+            // |     |     |     |     |     |     |        VOL_DN       |     |  _  |  +  |  {  |  }  |  |  |
+            //                   |     |     |     |         MUTE        |     |     |     |
 
             bindings = <
-&kp GRAVE  &kp EXCL      &kp AT        &kp HASH   &kp DLLR   &kp PRCNT  &mmv MOVE_UP     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp DEL
-&kp TILDE  &none         &mkp LCLK     &mkp MCLK  &mkp RCLK  &mkp MB4   &mmv MOVE_DOWN   &none      &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
-&none      &out OUT_USB  &out OUT_BLE  &none      &none      &mkp MB5   &mmv MOVE_LEFT   &none      &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE
-                         &kp C_MUTE    &trans     &trans     &trans     &mmv MOVE_RIGHT  &trans     &trans     &trans
-                                                                        &mkp LCLK
+&kp GRAVE  &kp EXCL  &kp AT      &kp HASH  &kp DLLR  &kp PRCNT  &kp C_VOLUME_UP    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp DEL
+&kp TILDE  &none     &none       &none     &none     &none      &kp C_VOLUME_DOWN  &none      &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
+&none      &none     &none       &none     &none     &none      &kp C_PREV         &none      &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE
+                     &kp C_MUTE  &trans    &trans    &trans     &kp C_NEXT         &trans     &trans     &trans
+                                                                &kp C_PLAY_PAUSE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -101,18 +101,18 @@
         func_layer {
             display-name = "FUNC";
 
-            // ---------------------------------------------------------------------------------------------------
-            // | ESC | F1  | F2   | F3   | F4   | F5  |        BT1        | F6   | F7  | F8  | F9  | F10  | F11  |
-            // |     | F12 | LCLK | MCLK | RCLK | MB4 |  BT3  BTCLR  BT4  |      |     | UP  |     | PGUP | HOME |
-            // |     | RST | OFF  | BOOT |      | MB5 |        BT2        |      | LFT | DWN | RGT | PGDN | END  |
-            //                    |      |      |     |                   |      |     |     |
+            // --------------------------------------------------------------------------------------------------------------------
+            // | ESC | F1      | F2      | F3      | F4      | F5      |        BT1        | F6   | F7  | F8  | F9  | F10  | F11  |
+            // |     | F12     | RGB_BRI | RGB_BRD | RGB_SPI | RGB_SPD |  BT3  BTCLR  BT4  |      |     | UP  |     | PGUP | HOME |
+            // |     | RGB_ON  | RGB_OFF | EP_OFF  | RGB_EFF | RGB_EFR |        BT2        |      | LFT | DWN | RGT | PGDN | END  |
+            //                           |         |         |         |      SOFT_OFF     |      |     |     |
 
             bindings = <
-&kp ESC  &kp F1      &kp F2      &kp F3       &kp F4     &kp F5    &bt BT_SEL 0    &kp F6  &kp F7     &kp F8     &kp F9     &kp F10    &kp F11
-&trans   &kp F12     &mkp LCLK   &mkp MCLK    &mkp RCLK  &mkp MB4  &bt BT_SEL 1    &none   &none      &kp UP     &none      &kp PG_UP  &kp HOME
-&trans   &sys_reset  &soft_off   &bootloader  &trans     &mkp MB5  &bt BT_SEL 2    &none   &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN  &kp END
-                     &kp C_MUTE  &trans       &trans     &trans    &bt BT_SEL 3    &trans  &trans     &trans
-                                                                   &bt BT_CLR_ALL
+&kp ESC  &kp F1          &kp F2           &kp F3             &kp F4           &kp F5           &bt BT_SEL 0    &kp F6  &kp F7     &kp F8     &kp F9     &kp F10    &kp F11
+&trans   &kp F12         &rgb_ug RGB_BRI  &rgb_ug RGB_BRD    &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &bt BT_SEL 1    &none   &none      &kp UP     &none      &kp PG_UP  &kp HOME
+&trans   &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &ext_power EP_OFF  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &bt BT_SEL 2    &none   &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN  &kp END
+                         &soft_off        &trans             &trans           &trans           &bt BT_SEL 3    &trans  &trans     &trans
+                                                                                               &bt BT_CLR_ALL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
