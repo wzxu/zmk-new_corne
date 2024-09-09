@@ -22,6 +22,13 @@
 
 / {
     behaviors {
+        td0: td0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD0";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+        };
+
         mmv {
             acceleration-exponent = <1>;      // 1
             time-to-max-speed-ms = <900>;    // 40
@@ -41,16 +48,16 @@
         default_layer {
             display-name = "QWERTY";
 
-            // ---------------------------------------------------------------------------------------------------------
-            // | TAB   |  Q  |  W  |  E  |  R  |  T  |         ↑         |  Y  |  U  |  I  |  O  |  P  | BKSP          |
-            // | SHIFT |  A  |  S  |  D  |  F  |  G  |    ←   ENT   →    |  H  |  J  |  K  |  L  |  ;  |  '            |
-            // | CTRL  |  Z  |  X  |  C  |  V  |  B  |         ↓         |  N  |  M  |  ,  |  .  |  /  | HYPER/RAYCAST |
-            //                     | CMD | LWR | SPC |       SPACE       | ENT | RSE | ALT |
+            // --------------------------------------------------------------------------------------------------------------
+            // | TAB        |  Q  |  W  |  E  |  R  |  T  |         ↑         |  Y  |  U  |  I  |  O  |  P  | BKSP          |
+            // | SHIFT/CAPS |  A  |  S  |  D  |  F  |  G  |    ←   ENT   →    |  H  |  J  |  K  |  L  |  ;  |  '            |
+            // | CTRL       |  Z  |  X  |  C  |  V  |  B  |         ↓         |  N  |  M  |  ,  |  .  |  /  | HYPER/RAYCAST |
+            //                          | CMD | LWR | SPC |       SPACE       | ENT | RSE | ALT |
 
             bindings = <
-&kp TAB     &kp Q  &kp W      &kp E     &kp R      &kp T           &kp UP_ARROW     &kp Y           &kp U      &kp I      &kp O    &kp P     &kp BSPC
-&kp LSHIFT  &kp A  &kp S      &kp D     &kp F      &kp G           &kp DOWN_ARROW   &kp H           &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL   &kp Z  &kp X      &kp C     &kp V      &kp B           &kp LEFT_ARROW   &kp N           &kp M      &kp COMMA  &kp DOT  &kp FSLH  &mt CAPS LG(SPACE)
+&kp TAB    &kp Q  &kp W      &kp E     &kp R      &kp T           &kp UP_ARROW     &kp Y           &kp U      &kp I      &kp O    &kp P     &kp BSPC
+&td0       &kp A  &kp S      &kp D     &kp F      &kp G           &kp DOWN_ARROW   &kp H           &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X      &kp C     &kp V      &kp B           &kp LEFT_ARROW   &kp N           &kp M      &kp COMMA  &kp DOT  &kp FSLH  &mt CAPS LG(SPACE)
                    &kp SPACE  &kp LGUI  &mo LOWER  &lt FUNC SPACE  &kp RIGHT_ARROW  &lt FUNC ENTER  &mo RAISE  &kp RALT
                                                                    &kp ENTER
             >;
@@ -61,7 +68,7 @@
         lower_layer {
             display-name = "NUMBER";
 
-            // -----------------------------------------------------------------------------------------------------------------
+            // ------------------------------------------------------------------------------------------------
             // | ESC |  1  |  2   |  3   |  4   |  5  |         ↑         |  6  |  7  |  8  |  9  |  0  |  =  |
             // |     |     | LCLK | MCLK | RCLK | MB4 |    ←  L_CLK  →    |     |  4  |  5  |  6  |  +  |  *  |
             // |     |     |      |      |      | MB5 |         ↓         |     |  1  |  2  |  3  |  -  |  /  |
