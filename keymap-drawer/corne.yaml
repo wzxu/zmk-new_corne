@@ -105,7 +105,7 @@ layers:
   - '#'
   - $
   - '%'
-  - $$mdi:volume-high$$
+  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - ^
   - '&'
   - '*'
@@ -118,7 +118,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:volume-low$$
+  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '-', s: _}
   - {t: '=', s: +}
@@ -131,22 +131,22 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:skip-previous$$
+  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - _
   - +
   - '{'
   - '}'
   - '|'
-  - $$mdi:volume-off$$
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:skip-next$$
+  - {h: '4', s: '$$mdi:bluetooth-connect$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
-  - PLAY PAUSE
+  - BT CLR ALL
   FUNC:
   - $$mdi:keyboard-esc$$
   - F1
@@ -154,7 +154,7 @@ layers:
   - F3
   - F4
   - F5
-  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
+  - $$mdi:volume-high$$
   - F6
   - F7
   - F8
@@ -167,7 +167,7 @@ layers:
   - RGB BRD
   - RGB SPI
   - RGB SPD
-  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
+  - $$mdi:volume-low$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:arrow-up-bold$$
@@ -180,7 +180,7 @@ layers:
   - EP OFF
   - RGB EFF
   - RGB EFR
-  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
+  - $$mdi:skip-previous$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
@@ -191,8 +191,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  - {h: '4', s: '$$mdi:bluetooth-connect$$'}
+  - $$mdi:skip-next$$
   - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - BT CLR ALL
+  - PLAY PAUSE
