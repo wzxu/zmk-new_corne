@@ -39,7 +39,7 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - {t: 'Gui+ $$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-caps$$'}
+  - {t: 'Gui+ $$mdi:keyboard-space$$', h: 'Gui+Ctl+AGr+ $$mdi:apple-keyboard-shift$$'}
   - $$mdi:keyboard-space$$
   - LGUI
   - NUMBER
