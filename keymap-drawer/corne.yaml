@@ -99,7 +99,7 @@ layers:
   - {t: '0', s: )}
   - $$mdi:mouse-left-click-outline$$
   SYMBOL:
-  - '~'
+  - {t: '`', s: '~'}
   - '!'
   - '@'
   - '#'
@@ -112,7 +112,7 @@ layers:
   - (
   - )
   - $$mdi:backspace-reverse-outline$$
-  - {t: '`', s: '~'}
+  - '~'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-scroll-wheel$$
